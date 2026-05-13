@@ -1,4 +1,4 @@
-# Y
+﻿# Y
 
 ## **Project Version**
 
@@ -6,7 +6,7 @@ V0
 
 ## **Objective**
 
-Build *Ohio* for a **yapper** to **Yap**, **Orbit**, and seek **lore**
+Build a *simple interface* for a **yapper** to **Yap**, **Orbit**, and seek **lore**
 
 ## Target User
 
@@ -20,10 +20,12 @@ Let them yap
 
 2.  **Orbit**
     
+
 Orbit another one
 
 3.  **Lore**
     
+
 See them yaps
 
 ##   Database schema
@@ -33,6 +35,7 @@ See them yaps
 **Yapper** (uuid, yapperId, name, email, dob, spawnedOn)
 
 **Orbit** (orbiterId, orbitteeId)
+
   
 
 ### Others 
@@ -44,33 +47,28 @@ TBD
 
 ### Frontend
 
-*V0*
-React.js,
+*V0* - React.js,
 
 ### Backend
 
-*V0*
-Spring Boot, Maven,
+*V0* - Spring Boot, Maven
 
-*Planned*
-(with database introduction) - Hibernate,
+*Planned* (with database introduction) - Hibernate
 
-### Database
+### Data storage
 
-*V0*
-In-memory storage,
+*V0* - In-memory store
 
-*Planned*
-(TBD) - SQL(MySQL/Postgres), MongoDB
+*Planned* (TBD) - SQL(MySQL/PostgresSQL), MongoDB
 
-### Deployment
+### Infrastructure & Deployment
 
-*V0*
-Local
+*V0* - Local
 
-*Planned*
-(TBD) - Cloud, Containers, Load Balancers/ API Gateway
+*Planned* (TBD) - Cloud, Containers, Load Balancers/ API Gateway
 
+## High Level Design
+![Y MVP HLD](./whiteboard/v0_global_hld.svg)
 
 ## **Data Structure**
 
