@@ -38,7 +38,7 @@ Content-Type: application/json
 
 * **Success Response:**  
 
-* **Code:** 200 
+* **Code:** 200  
 **Content:**  
 ```
 	{
@@ -63,14 +63,12 @@ None
 * **Headers**
 Content-Type: application/json
 
-* **Success Response:**
-
-* **Code:** 200
+* **Success Response:**  
+**Code:** 200  
 **Content:**  `{ <yapper_object> }`
 
 * **Error Response:**  
-
-* **Code:** 404 
+**Code:** 404  
 **Content:** `{ error : "Yapper not here fam!" }`
 
 **POST /yappers**
@@ -94,7 +92,7 @@ Content-Type: application/json
 ```
 
 * **Success Response:**  
-* **Code:** 201
+**Code:** 201  
 **Content:**  `{ <yapper_object> }` 
 
 ## Orbiter
@@ -129,10 +127,10 @@ Content-Type: application/json
 		orbiteeId: integer
 	}
 ```
-* **Success Response:**
-* **Code:** 201
+* **Success Response:**  
+**Code:** 201  
 **Content:**  `{ <orbiter_object> }`
 
-* **Error Response:**
-* **Code:** 404
+* **Error Response:**  
+**Code:** 404  
 **Content:** `{ error : "Yapper not here fam!" }`
