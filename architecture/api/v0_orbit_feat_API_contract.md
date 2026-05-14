@@ -23,7 +23,7 @@
 
 ### Methods
 
-**GET /yappers**
+#### GET /yappers
 ----
 Returns all yappers in Ohio.
 
@@ -49,17 +49,17 @@ Content-Type: application/json
 	}
 ```
 
-**GET /yappers/:id**
+#### GET /yappers/:id
 ----
 Returns the one and only MC yapper
 
-* **URL Params**
+* **URL Params**  
 None
 
-* **Data Params**
+* **Data Params**  
 None
 
-* **Headers**
+* **Headers**  
 Content-Type: application/json
 
 * **Success Response:**  
@@ -72,15 +72,12 @@ Content-Type: application/json
 **Content:**  
 `{ error : "Yapper not here fam!" }`
 
-**POST /yappers**
+#### POST /yappers
 ----
 Spawns a dope Yapper and returns them to ya.
 
 * **URL Params**  
 None
-
-* **Headers**  
-Content-Type: application/json  
 
 * **Data Params**  
 ```
@@ -91,6 +88,9 @@ Content-Type: application/json
 		dob: datetime(iso 8601)
 	}
 ```
+
+* **Headers**  
+Content-Type: application/json  
 
 * **Success Response:**  
 **Code:** 201  
@@ -112,15 +112,12 @@ Content-Type: application/json
 
 ### Methods
 
-**POST /orbiters**
+#### POST /orbiters
 ----
 Orbit another one
 
-* **URL Params**
+* **URL Params**  
 None
-
-* **Headers**
-Content-Type: application/json
 
 * **Data Params**
 ```
@@ -129,6 +126,10 @@ Content-Type: application/json
 		orbiteeId: integer
 	}
 ```
+
+* **Headers**  
+Content-Type: application/json
+
 * **Success Response:**  
 **Code:** 201  
 **Content:**  
