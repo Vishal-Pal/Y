@@ -19,23 +19,20 @@ Build a *simple interface* for a **yapper** to **Yap**, **Orbit**, and seek **lo
 Let them yap
 
 2.  **Orbit**
-    
 
 Orbit another one
 
 3.  **Lore**
-    
 
 See them yaps
 
-##   Database schema
+##   Domain Model
 
 ### Orbit
 
 **Yapper** (uuid, yapperId, name, email, dob, spawnedOn)
 
-**Orbit** (orbiterId, orbitteeId)
-
+**Orbiter** (orbiterId, orbitteeId)
   
 
 ### Others 
