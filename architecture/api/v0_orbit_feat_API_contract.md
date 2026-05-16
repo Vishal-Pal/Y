@@ -143,7 +143,7 @@ Content-Type: application/json
 Orbit another one
 
 * **URL Params**  
-None
+Required: orbiteeId=[string]
 
 * **Data Params**
 ```
