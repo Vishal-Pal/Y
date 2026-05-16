@@ -54,7 +54,7 @@ Content-Type: application/json
 Returns the one and only MC yapper
 
 * **URL Params**  
-None
+Required: id=[string]
 
 * **Data Params**  
 None
@@ -100,19 +100,45 @@ Content-Type: application/json
 ## Orbiter
 
 ### Object
+None
+
+### Endpoint
+/yappers/:orbiteeId/orbiters/
+
+### Methods  
+
+#### GET /yappers/:orbiteeId/orbiters/
+----
+Returns all the orbiters of the OG yapper
+
+* **URL Params**  
+Required: orbiteeId=[string]
+
+* **Data Params**  
+None
+
+* **Headers**  
+Content-Type: application/json
+
+* **Success Response:**  
+**Code:** 200  
+**Content:**  
 ```
 	{
-	    orbiterId: integer
-	    orbiteeId: integer
+		yappers: [
+					{<yapper_object>},
+					{<yapper_object>},
+					{<yapper_object>},
+	        ]
 	}
 ```
 
-### Endpoint
-/orbiters
+* **Error Response:**  
+**Code:** 404  
+**Content:**  
+`{ error : "Yapper not here fam!" }`
 
-### Methods
-
-#### POST /orbiters
+#### POST /yappers/:orbiteeId/orbiters/
 ----
 Orbit another one
 
@@ -122,8 +148,7 @@ None
 * **Data Params**
 ```
 	{
-		orbiterId: integer
-		orbiteeId: integer
+		orbiterId: string
 	}
 ```
 
@@ -133,7 +158,30 @@ Content-Type: application/json
 * **Success Response:**  
 **Code:** 201  
 **Content:**  
-`{ <orbiter_object> }`
+`{ success : "Entered their orbit!" }`
+
+* **Error Response:**  
+**Code:** 404  
+**Content:**  
+`{ error : "Yapper not here fam!" }`
+
+#### DELETE /yappers/:orbiteeId/orbiters/:orbiterId
+----
+Fly away from 'em
+
+* **URL Params**  
+Required: orbiteeId=[string], orbiterId=[string]
+
+* **Data Params**  
+None
+
+* **Headers**  
+Content-Type: application/json
+
+* **Success Response:**  
+**Code:** 204  
+**Content:**  
+No content
 
 * **Error Response:**  
 **Code:** 404  
