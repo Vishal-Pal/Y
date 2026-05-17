@@ -3,6 +3,7 @@ package dev.y.backend.repository;
 import dev.y.backend.model.Yapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,18 +19,17 @@ public class InMemoryYapperRepositoryImpl implements YapperRepository{
 
     @Override
     public List<Yapper> getAllYappers() {
-        // TODO
-        return List.of();
+        return new ArrayList<>(yapperIdToYapperMap.values());
     }
 
     @Override
     public Yapper getYapperByYapperId(String yapperId) {
-        // TODO
-        return null;
+        return yapperIdToYapperMap.get(yapperId);
     }
 
     @Override
-    public void createYapper(Yapper yapperDTO) {
-        // TODO
+    public void createYapper(Yapper yapper) {
+        String yapperId = yapper.getYapperId();
+        yapperIdToYapperMap.put(yapperId, yapper);
     }
 }
