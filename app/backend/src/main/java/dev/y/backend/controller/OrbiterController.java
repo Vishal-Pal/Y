@@ -2,6 +2,7 @@ package dev.y.backend.controller;
 
 import dev.y.backend.dto.YapperDTO;
 import dev.y.backend.service.OrbiterService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,14 +11,10 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/yappers/{orbiteeId}/orbiters")
+@RequiredArgsConstructor
 public class OrbiterController {
 
     private final OrbiterService orbiterService;
-
-    @Autowired
-    public OrbiterController(OrbiterService orbiterService) {
-        this.orbiterService = orbiterService;
-    }
 
     @GetMapping
     public List<YapperDTO> getOrbiters(@PathVariable String orbiteeId){
