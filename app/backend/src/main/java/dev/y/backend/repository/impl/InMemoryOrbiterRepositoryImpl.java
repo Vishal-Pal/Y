@@ -1,6 +1,7 @@
-package dev.y.backend.repository;
+package dev.y.backend.repository.impl;
 
 import dev.y.backend.model.Yapper;
+import dev.y.backend.repository.OrbiterRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;

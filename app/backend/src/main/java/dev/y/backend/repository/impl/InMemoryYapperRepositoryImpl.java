@@ -1,6 +1,7 @@
-package dev.y.backend.repository;
+package dev.y.backend.repository.impl;
 
 import dev.y.backend.model.Yapper;
+import dev.y.backend.repository.YapperRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-public class InMemoryYapperRepositoryImpl implements YapperRepository{
+public class InMemoryYapperRepositoryImpl implements YapperRepository {
 
     private Map<String, Yapper> yapperIdToYapperMap;
 
