@@ -3,7 +3,6 @@ package dev.y.backend.controller;
 import dev.y.backend.dto.YapperDTO;
 import dev.y.backend.service.OrbiterService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
