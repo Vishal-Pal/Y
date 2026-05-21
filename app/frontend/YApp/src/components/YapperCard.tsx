@@ -1,4 +1,4 @@
-interface YapperCardProps{
+export interface YapperCardProps{
     yapperId:string;
     yapperName:string;
 }
