@@ -1,5 +1,5 @@
 import YapperCard from "../components/YapperCard";
-import ogYapper from "../test/resources/ogYapper.json";
+import ogYapper from "../test/resources/mockData/yapper/ogYapper.json";
 
 export default function Home() {
     return (
