@@ -9,16 +9,18 @@ export default function Home() {
             <h1>Welcome to YapIO</h1>
             <YapperCard {...ogYapper} />
             <br></br>
-            <table style={{ borderCollapse: 'collapse', width: '100%' }}>
-                {
-                otherYappers.map((yapper)=>(
-                    <td key = {yapper.yapperId}>
-                        <OrbiteeCard yapperCardProps={yapper} />
-                    </td>
-                ))
-            }
+            <br></br>
+            <table style={{ borderCollapse: "collapse", width: "100%" }}>
+                <tbody>
+                    <tr>
+                        {otherYappers.map((yapper) => (
+                            <td key={yapper.yapperId}>
+                                <OrbiteeCard yapperCardProps={yapper} />
+                            </td>
+                        ))}
+                    </tr>
+                </tbody>
             </table>
-            
         </>
     );
 }
