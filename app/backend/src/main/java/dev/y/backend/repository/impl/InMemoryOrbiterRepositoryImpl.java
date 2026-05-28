@@ -1,6 +1,5 @@
 package dev.y.backend.repository.impl;
 
-import dev.y.backend.model.Yapper;
 import dev.y.backend.repository.OrbiterRepository;
 import org.springframework.stereotype.Repository;
 
@@ -17,7 +16,11 @@ public class InMemoryOrbiterRepositoryImpl implements OrbiterRepository {
 
     @Override
     public List<String> getOrbiters(String orbiteeId) {
-        return new ArrayList<>(orbiterIdToOrbiteeIdSetMap.get(orbiteeId));
+        Set<String> orbiterSet = orbiterIdToOrbiteeIdSetMap.get(orbiteeId);
+        if(Objects.isNull(orbiterSet)){
+            orbiterSet = Set.of();
+        }
+        return new ArrayList<>(orbiterSet);
     }
 
     @Override
@@ -30,8 +33,7 @@ public class InMemoryOrbiterRepositoryImpl implements OrbiterRepository {
     @Override
     public void deleteOrbiter(String orbiteeId, String orbiterId) {
         Set<String> existingOrbiters = orbiterIdToOrbiteeIdSetMap.get(orbiteeId);
-        if(Objects.isNull(existingOrbiters)
-                || existingOrbiters.isEmpty()){
+        if(Objects.isNull(existingOrbiters)){
             return;
         }
         existingOrbiters.remove(orbiterId);

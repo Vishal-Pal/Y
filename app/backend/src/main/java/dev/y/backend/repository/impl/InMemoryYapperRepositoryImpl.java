@@ -12,7 +12,7 @@ import java.util.Map;
 @Repository
 public class InMemoryYapperRepositoryImpl implements YapperRepository {
 
-    private Map<String, Yapper> yapperIdToYapperMap;
+    private final Map<String, Yapper> yapperIdToYapperMap;
 
     public InMemoryYapperRepositoryImpl(){
         this.yapperIdToYapperMap = new HashMap<>();

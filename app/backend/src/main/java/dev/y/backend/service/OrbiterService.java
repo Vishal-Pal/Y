@@ -20,6 +20,10 @@ public class OrbiterService {
     private final YapperService yapperService;
 
     public List<YapperDTO> getOrbiters(String orbiteeId) {
+        boolean orbiteeYapperExists = yapperService.doesYapperExist(orbiteeId);
+        if(!orbiteeYapperExists){
+            return null;
+        }
         List<String> orbiterIds = orbiterRepository.getOrbiters(orbiteeId);
         List<YapperDTO> orbiterList = new ArrayList<>();
         for(String orbiterId: orbiterIds){
@@ -32,12 +36,34 @@ public class OrbiterService {
         return orbiterList;
     }
 
-    public String createOrbiter(String orbiteeId, String orbiterId) {
+    public boolean createOrbiter(String orbiteeId, String orbiterId) {
+        boolean orbiteeYapperExists = yapperService.doesYapperExist(orbiteeId);
+        if(!orbiteeYapperExists){
+            return false;
+        }
+        boolean orbiterYapperExists = yapperService.doesYapperExist(orbiterId);
+        if(!orbiterYapperExists){
+            return false;
+        }
         orbiterRepository.createOrbiter(orbiteeId, orbiterId);
-        return "success : \"Entered their orbit!\"";
+        return true;
     }
 
-    public void deleteOrbiter(String orbiteeId, String orbiterId) {
+    public boolean deleteOrbiter(String orbiteeId, String orbiterId) {
+        boolean orbiteeYapperExists = yapperService.doesYapperExist(orbiteeId);
+        if(!orbiteeYapperExists){
+            return false;
+        }
+        List<String> orbiterIds = orbiterRepository.getOrbiters(orbiteeId);
+        if(Objects.isNull(orbiterIds)
+                || orbiterIds.isEmpty()){
+            return true;
+        }
+        boolean orbiterYapperExists = yapperService.doesYapperExist(orbiterId);
+        if(!orbiterYapperExists){
+            return false;
+        }
         orbiterRepository.deleteOrbiter(orbiteeId, orbiterId);
+        return true;
     }
 }

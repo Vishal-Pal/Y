@@ -33,10 +33,16 @@ public class YapperService {
         return yapper == null? null:YapperMapper.toDTO(yapper);
     }
 
-    public void createYapper(YapperDTO yapperDTO){
+    public YapperDTO createYapper(YapperDTO yapperDTO){
         Yapper yapper = YapperMapper.toEntity(yapperDTO);
         yapper.setUuid(globalYapperUuid++);
         yapper.setSpawnedOn(Instant.now());
         yapperRepository.createYapper(yapper);
+        return yapperDTO;
+    }
+
+    public boolean doesYapperExist(String yapperId){
+        Yapper yapper = yapperRepository.getYapperByYapperId(yapperId);
+        return yapper != null;
     }
 }

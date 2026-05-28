@@ -1,6 +1,5 @@
 package dev.y.backend.repository;
 
-import dev.y.backend.dto.YapperDTO;
 import dev.y.backend.model.Yapper;
 
 import java.util.List;
