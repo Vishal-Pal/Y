@@ -10,12 +10,10 @@
 
 ```
 	{
-		uuid: integer
 		yapperId: string
 		name: string
 		email: string
 		dob: datetime(iso 8601)
-		spawnedOn: datetime(iso 8601)
 	}
 ```
 ### Endpoint
@@ -33,20 +31,15 @@ None
 * **Data Params**  
 None
 
-* **Headers**  
-Content-Type: application/json
-
 * **Success Response:**  
 **Code:** 200  
 **Content:**  
 ```
-	{
-		yappers: [
-					{<yapper_object>},
-					{<yapper_object>},
-					{<yapper_object>},
-	        ]
-	}
+	[
+		{<yapper_object>},
+		{<yapper_object>},
+		{<yapper_object>}
+	]
 ```
 
 #### GET /yappers/:id
@@ -58,9 +51,6 @@ Required: id=[string]
 
 * **Data Params**  
 None
-
-* **Headers**  
-Content-Type: application/json
 
 * **Success Response:**  
 **Code:** 200  
@@ -81,12 +71,7 @@ None
 
 * **Data Params**  
 ```
-	{
-		yapperId: string,
-		name: string,
-		email: string,
-		dob: datetime(iso 8601)
-	}
+	{<yapper_object>}
 ```
 
 * **Headers**  
@@ -117,20 +102,15 @@ Required: orbiteeId=[string]
 * **Data Params**  
 None
 
-* **Headers**  
-Content-Type: application/json
-
 * **Success Response:**  
 **Code:** 200  
 **Content:**  
 ```
-	{
-		yappers: [
-					{<yapper_object>},
-					{<yapper_object>},
-					{<yapper_object>},
-	        ]
-	}
+	[
+		{<yapper_object>},
+		{<yapper_object>},
+		{<yapper_object>}
+	]
 ```
 
 * **Error Response:**  
@@ -173,10 +153,7 @@ Fly away from 'em
 Required: orbiteeId=[string], orbiterId=[string]
 
 * **Data Params**  
-None
-
-* **Headers**  
-Content-Type: application/json
+None  
 
 * **Success Response:**  
 **Code:** 204  
