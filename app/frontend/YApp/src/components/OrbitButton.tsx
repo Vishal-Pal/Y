@@ -18,7 +18,6 @@ export default function OrbitButton({orbiteeId,orbiterId}: OrbitButtonProps) {
         const nextState = !isActive;
         isActive ? createOrbiter(orbiterId) : deleteOrbiter(orbiterId);
         setIsActive(nextState);
-        alert(getLabel() + " Button Clicked! Hooray!!!!!! Less go vro :))");
     };
 
     const createOrbiter = async (orbiterId: string) => {
@@ -28,16 +27,25 @@ export default function OrbitButton({orbiteeId,orbiterId}: OrbitButtonProps) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({orbiterId}),
         });
-        res.ok ? alert(`Orbited them`):alert(`Cannot orbit fam! Status: ${res.status}`);
+        if (res.ok) {
+            alert(`Orbited them`);
+        } else {
+            const data = await res.json().catch(() => ({})); 
+            alert(data.error || `Cannot orbit fam! Status: ${res.status}`);
+        }
     };
 
     const deleteOrbiter = async (orbiterId: string) => {
         const url = `${baseUrl}/${orbiterId}`;
         const res = await fetch(url, {
-            method: "DELETE",
-            headers: { "Content-Type": "application/json" }
+            method: "DELETE"
         });
-        res.ok ? alert(`Exited their orbit`):alert(`Cannot exit fam! Status: ${res.status}`);
+        if (res.ok) {
+            alert(`Exited their orbit`);
+        } else {
+            const data = await res.json().catch(() => ({}));
+            alert(data.error || `Cannot exit fam! Status: ${res.status}`);
+        }
     };
 
     return (
