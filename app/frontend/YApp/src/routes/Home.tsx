@@ -34,7 +34,7 @@ export default function Home() {
             <YapperCard {...ogYapper} />
             <br></br>
             <br></br>
-            <OrbitTable yappersArr={otherYappers} />
+            <OrbitTable orbiterId={ogYapper.yapperId} yappersArr={otherYappers} />
         </>
     );
 }

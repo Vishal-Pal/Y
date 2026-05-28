@@ -3,12 +3,13 @@ import type { YapperCardProps } from "./YapperCard";
 import YapperCard from "./YapperCard";
 
 interface OrbiteeCardProps{
+    orbiterId: string;
     yapperCardProps:YapperCardProps;
 }
 
-export default function OrbiteeCard({yapperCardProps}: OrbiteeCardProps) {
+export default function OrbiteeCard({orbiterId, yapperCardProps}: OrbiteeCardProps) {
     return <>
     <YapperCard {...yapperCardProps} />
-    <OrbitButton />
+    <OrbitButton orbiteeId={yapperCardProps.yapperId} orbiterId={orbiterId}/>
     </>;
 }
